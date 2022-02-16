@@ -1,7 +1,6 @@
 .button{
     background: #0077ff;
     cursor: pointer;
-    width: 75%;
     padding: 10px 20px;
     border: none;
     outline: none;
@@ -17,4 +16,9 @@
 
 .button:hover{
     background: #014a9c;
+}
+
+
+.arrow {
+    margin-left: 10px;
 }

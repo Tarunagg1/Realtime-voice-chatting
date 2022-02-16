@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import StepOtp from '../Steps/StepOtp/StepOtp';
 import StepPhoneEmail from '../Steps/StepPhoneEmail/StepPhoneEmail';
-import './login.module.css';
 
 const steps = {
     1:StepPhoneEmail,
@@ -9,7 +8,7 @@ const steps = {
 }
 
 
-export default function Login() {
+export default function Authenticate() {
     const [step,setStep] = useState(1);
     const CurrentStep = steps[step];
     

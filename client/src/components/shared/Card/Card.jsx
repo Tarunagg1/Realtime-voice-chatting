@@ -6,6 +6,7 @@ export default function Card({ title, icon, children }) {
     <Fragment>
         <div className={style.card}>
           <div className={style.haddingWrapper}>
+          {icon && <img src={`/images/${icon}.png`} alt="logo" />}
             <h1 className={style.heading}>{title}</h1>
           </div>
           {children}

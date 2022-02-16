@@ -16,7 +16,7 @@ export default function Home() {
 
   const startRegistration = ()=>{
     console.log('hehe');  
-    navigate("/register");
+    navigate("/authenticate");
   }
 
   return (
@@ -30,12 +30,12 @@ export default function Home() {
           </p>
 
           <div>
-            <Button onClick={startRegistration} label="Get your user name" />
+            <Button onClick={startRegistration} label="Let's Go" />
           </div>
 
           <div className={style.signinnWrapper}>
             <span className={style.invite}>Have an invite text?</span>
-            <Link to="/login" style={signnInLinkStyle}>SignIn</Link>
+            <Link to="/authenticate" style={signnInLinkStyle}>SignIn</Link>
           </div>
         </Card>
       </div>
