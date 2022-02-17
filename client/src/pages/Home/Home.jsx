@@ -15,7 +15,6 @@ export default function Home() {
   const navigate = useNavigate();
 
   const startRegistration = ()=>{
-    console.log('hehe');  
     navigate("/authenticate");
   }
 

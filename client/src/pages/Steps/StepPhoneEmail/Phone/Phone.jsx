@@ -13,6 +13,10 @@ export default function Phone({onNext}) {
     const dispatch = useDispatch();
 
     const submit = async ()=>{
+        if(!phoneNumber){
+            toast.error("Phone number is required")
+            return;
+        }
         const {data} = await sendOtp({phone:phoneNumber});
         dispatch(setOtp({hash:data.hash,phone:phoneNumber}));
         toast.success("Otp send successfully")

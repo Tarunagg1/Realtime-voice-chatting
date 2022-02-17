@@ -8,7 +8,7 @@ export default function Email({onNext}) {
     const [email, setEmail] = useState('');
 
   return (
-    <Card title="Enter your phone number" icon="email-emoji">
+    <Card title="Enter your Email Address" icon="email-emoji">
     <Textinput value={email} onChange={(e) => setEmail(e.target.value)} type="email"  />
         <div>
             <div className={style.actionButtonWrap}>

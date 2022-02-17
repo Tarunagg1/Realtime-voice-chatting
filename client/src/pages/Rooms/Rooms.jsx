@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-export default function Room() {
+export default function Rooms() {
   return (
     <Fragment>Room</Fragment>
   )
