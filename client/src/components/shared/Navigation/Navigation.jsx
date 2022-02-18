@@ -25,7 +25,6 @@ export default function Navigation() {
   async function logoutUser() {
     try {
       const { data } = await logout();
-      console.log(data);
       dispatch(setAuth(data));
     } catch (err) {
       console.log(err);
@@ -38,6 +37,7 @@ export default function Navigation() {
         <Link style={baseStyle} to="/">
           <span style={logotext}>Voice chatting system</span>
         </Link>
+
         {isAuth && (
           <div className={styles.navRight}>
             <h3>{user?.name}</h3>
@@ -52,13 +52,14 @@ export default function Navigation() {
                 width="40"
                 height="40"
                 alt="avatar"
+                srcSet=''
               />
             </Link>
             <button
               className={styles.logoutButton}
               onClick={logoutUser}
             >
-              <img src="/images/logout.png" alt="logout" />
+              <img src="/images/logout.png" alt="logout" srcSet='' />
             </button>
           </div>
         )}

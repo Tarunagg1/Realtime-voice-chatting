@@ -6,7 +6,7 @@ class UserDao{
     constructor(user){
         this._id = user._id;
         this.activated = user.activated;
-        this.avatar = user.avatar ? `${process.env.BASE_URL}${user.avatar}` : null;
+        this.avatar = user.avatar ? `${user.avatar}` : null;
         this.phone = user.phone;
         this.createdAt = user.createdAt;
     }

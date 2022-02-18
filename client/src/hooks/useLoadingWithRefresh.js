@@ -18,10 +18,10 @@ export function useLoadingWithRefresh() {
             } catch (error) {
                 // log
                 setloading(false);
-                console.log(error);
             }
         })()
+        // eslint-disable-next-line
     }, []);
 
-    return {loading};
+    return { loading };
 }

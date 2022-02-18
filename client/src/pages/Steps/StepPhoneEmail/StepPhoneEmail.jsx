@@ -25,14 +25,14 @@ export default function StepPhoneEmail({ onNext }) {
                                 }`}
                             onClick={() => setType('phone')}
                         >
-                            <img src="/images/phone-white.png" alt="phone" />
+                            <img src="/images/phone-white.png" alt="phone" srcSet='' />
                         </button>
                         <button
                             className={`${styles.tabButton} ${type === 'email' ? styles.active : ''
                                 }`}
                             onClick={() => setType('email')}
                         >
-                            <img src="/images/mail-white.png" alt="email" />
+                            <img src="/images/mail-white.png" alt="email" srcSet='' />
                         </button>
                     </div>
                     <Component onNext={onNext} />

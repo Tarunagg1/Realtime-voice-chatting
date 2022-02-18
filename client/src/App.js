@@ -1,16 +1,17 @@
 import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import Home from "./pages/Home/Home";
 import Navigation from './components/shared/Navigation/Navigation';
 import Authenticate from './pages/Authenticate/Authennticate';
 import Activate from './pages/Activate/Activate';
-import Room from './pages/Rooms/Rooms';
+import Rooms from './pages/Rooms/Rooms';
 import { ToastContainer } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLoadingWithRefresh } from './hooks/useLoadingWithRefresh';
 import Loader from './components/shared/Loader/Loader';
+import Room from './pages/Roommain/Room';
 
 function App() {
   const { loading } = useLoadingWithRefresh();
@@ -37,7 +38,11 @@ function App() {
 
               <Route path="/activate" element={<SemiProtected><Activate /></SemiProtected>} />
 
-              <Route path="/rooms" element={<ProtectedRoute> <Room /> </ProtectedRoute>} />
+              <Route path="/rooms" element={<ProtectedRoute> <Rooms /> </ProtectedRoute>} />
+
+              <Route path="/room/:id" element={<ProtectedRoute> <Room /> </ProtectedRoute>} />
+
+              <Route path="*" element={<GuestRoute> <Home /> </GuestRoute>} />
             </Routes>
           </>
         )

@@ -6,7 +6,7 @@ export default function Button({label,onClick}) {
     <Fragment>
         <button onClick={onClick} className={style.button}>
             <span>{label}</span>
-            <img src="/images/arrow-forward.png"  className={style.arrow} alt="arrow-forward.png" />
+            <img src="/images/arrow-forward.png" srcSet=""  className={style.arrow} alt="arrow-forward.png" />
         </button>
     </Fragment>
   )

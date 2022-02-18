@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Card from "../../../components/shared/Card/Card";
 import Button from "../../../components/shared/Button/Button";
@@ -11,6 +11,7 @@ import Loader from '../../../components/shared/Loader/Loader';
 
 export default function StepAvtar() {
   const { name, avtar } = useSelector((state) => state.activate);
+  const [unMounnted, setunMounnted] = useState(false);
   const [loading, setloading] = useState(false);
 
   const dispatch = useDispatch();
@@ -37,7 +38,9 @@ export default function StepAvtar() {
     try {
       const { data } = await activateUser({ name, avatar: avtar });
       if (data.auth) {
-        dispatch(setAuth(data));
+        if(!unMounnted){
+          dispatch(setAuth(data));
+        }
       }
     } catch (error) {
       // logging 
@@ -46,6 +49,13 @@ export default function StepAvtar() {
       setloading(false);
     }
   };
+
+  useEffect(() => {
+    return () => {
+      setunMounnted(true);
+    }
+  }, [])
+  
 
   return (
     <Fragment>
@@ -58,7 +68,7 @@ export default function StepAvtar() {
               <Card title={`Okay, ${name}`} icon="monkey-emoji">
                 <p className={styles.subHeading}>How’s this photo?</p>
                 <div className={styles.avatarWrapper}>
-                  <img className={styles.avatarImage} src={image} alt="avatar" />
+                  <img className={styles.avatarImage} src={image} alt="avatar" srcSet='' />
                 </div>
                 <div>
                   <input

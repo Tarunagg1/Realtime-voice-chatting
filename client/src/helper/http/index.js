@@ -25,6 +25,15 @@ export const logout = () => {
     return api.post('/api/logout');
 }
 
+export const createRoomApi = (data) => {
+    return api.post('/api/rooms',data);
+}
+
+export const getRoomApi = () => {
+    return api.get('/api/rooms');
+}
+
+
 
 
 // interceptors
@@ -47,7 +56,7 @@ api.interceptors.response.use((config) => {
             );
             return api.request(originalRequest);
         } catch (err) {
-            console.log(err.message);
+            // logging
         }
     }
     throw error;

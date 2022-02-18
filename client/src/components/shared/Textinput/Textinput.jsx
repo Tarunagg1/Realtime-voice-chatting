@@ -4,7 +4,7 @@ import './textinput.modele.css';
 export default function Textinput(props) {
   return (
     <Fragment>
-          <input className="textinput" {...props} />
+          <input className="textinput" style={{width: props.fullwidth === 'true' ? '100%' : 'inherit'}} {...props} />
     </Fragment>
   )
 }

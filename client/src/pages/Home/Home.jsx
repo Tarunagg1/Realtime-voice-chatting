@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <Fragment>
       <div className={style.cardWrappper}>
-        <Card title="Welcome to voice chatting system" icon="kk">
+        <Card title="Welcome to voice chatting system" icon="logo">
           <p className={style.para}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
             maxime voluptates architecto deserunt aut? Voluptatum iure
