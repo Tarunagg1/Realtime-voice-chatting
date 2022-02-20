@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import Model from '../../components/Model/Model';
 import Roomcard from '../../components/Roomcard/Roomcard';
-import { getRoomApi } from '../../helper/http';
+import { getRoomsApi } from '../../helper/http';
 import styles from './rooms.module.css';
 
 export default function Rooms() {
@@ -18,7 +18,7 @@ export default function Rooms() {
 
   useEffect(() => {
      const fetchRooms = async ()=>{
-       const {data} = await getRoomApi();
+       const {data} = await getRoomsApi();
        setRooms(data);
      }
      fetchRooms();
@@ -32,13 +32,13 @@ export default function Rooms() {
           <div className={styles.left}>
             <span className={styles.heading}>All voice rooms</span>
             <div className={styles.searchBox}>
-              <img src="/images/search-icon.png" alt="search logo" srcset="" />
+              <img src="/images/search-icon.png" alt="search logo" srcSet="" />
               <input type="text" className={styles.searchInput} />
             </div>
           </div>
           <div className={styles.right}>
             <button onClick={openModel} className={styles.startButton}>
-              <img src="/images/add-room-icon.png" alt="add logo" srcset="" />
+              <img src="/images/add-room-icon.png" alt="add logo" srcSet="" />
               <span>Start the room</span>
             </button>
           </div>

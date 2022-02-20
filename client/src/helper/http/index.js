@@ -29,11 +29,13 @@ export const createRoomApi = (data) => {
     return api.post('/api/rooms',data);
 }
 
-export const getRoomApi = () => {
+export const getRoomsApi = () => {
     return api.get('/api/rooms');
 }
 
-
+export const getRoomApi = (id) => {
+    return api.get(`/api/rooms/${id}`);
+}
 
 
 // interceptors
